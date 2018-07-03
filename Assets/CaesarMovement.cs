@@ -16,6 +16,11 @@ public class CaesarMovement : MonoBehaviour {
 			flipRight ();
 		}
 
+		if (isLeftMoving != true && transform.position.x > 1) {
+			isLeftMoving = true;
+			flipLeft ();
+		}
+
 		if (isLeftMoving) {
 			moveLeft ();
 		} else {
@@ -25,6 +30,7 @@ public class CaesarMovement : MonoBehaviour {
 
 	void flipLeft() {
 		transform.localScale = new Vector3 (1, 1, 1);
+		transform.Translate (1.5f, 0, 0);
 	}
 
 	void flipRight() {
